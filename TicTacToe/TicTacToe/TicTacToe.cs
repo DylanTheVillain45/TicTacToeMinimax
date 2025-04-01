@@ -1,7 +1,6 @@
 public class TicTacToe {
-    int[] board = new int[9];
-    
     public void NewGame() {
+        int[] board = new int[9];
         int move;
         bool isPlayerMove = HelperFunction.GetUserInput();
         bool isX = true;
@@ -22,6 +21,9 @@ public class TicTacToe {
                 HelperFunction.ShowBoard(board);
                 Console.WriteLine();
                 Console.WriteLine(isPlayerMove ? "Player Wins" : "AI Wins");
+                Console.WriteLine("Press enter to play again");
+                Console.ReadLine();
+                NewGame();
                 return;
             }
 
