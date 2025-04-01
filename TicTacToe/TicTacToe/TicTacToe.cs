@@ -7,6 +7,18 @@ public class TicTacToe {
 
         while (true) {
             List<int> possibleMoves = HelperFunction.GetMoves(board);
+            
+            if (possibleMoves.Count == 0) {
+                Console.Clear();
+                HelperFunction.ShowBoard(board);
+                Console.WriteLine();
+                Console.WriteLine("Draw");
+                Console.WriteLine("Press enter to play again");
+                Console.ReadLine();
+                NewGame();
+                return;
+            }
+
             if (isPlayerMove) {
                 HelperFunction.ShowBoard(board);
                 move = HelperFunction.GetPlayerMove(possibleMoves);
